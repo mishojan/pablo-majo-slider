@@ -132,46 +132,6 @@ export default function Home() {
     })
   );
 
-  // const goToSlide1 = () => {
-  //   console.log("asd");
-  //   timeline.current
-  //     .to(
-  //       activeBorderRef.current,
-  //       {
-  //         y: 20 * 1,
-  //       },
-  //       "<"
-  //     )
-  //     .to(
-  //       slide1ImageRef.current,
-  //       {
-  //         autoAlpha: 1,
-  //         y: 0,
-  //       },
-  //       0
-  //     )
-  //     .to(
-  //       slide1ContentRef.current,
-  //       {
-  //         autoAlpha: 1,
-  //         y: 0,
-  //       },
-  //       0
-  //     )
-  //     .to(slide1ImageRef.current, {
-  //       autoAlpha: 0,
-  //       y: -20,
-  //     })
-  //     .to(
-  //       slide1ContentRef.current,
-  //       {
-  //         autoAlpha: 0,
-  //         y: -20,
-  //       },
-  //       "<"
-  //     );
-  // };
-
   useEffect(() => {
     timeline.current
       .addLabel("slide1")
