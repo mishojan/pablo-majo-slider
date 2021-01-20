@@ -8,8 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "gsap": "./gsap-bonus.tgz",
     "next": "10.0.5",
+    "next-compose-plugins": "^2.2.1",
+    "next-transpile-modules": "^6.0.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "styled-components": "^5.2.1"
   }
 }
