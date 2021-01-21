@@ -135,46 +135,22 @@ export default function Home() {
   useEffect(() => {
     timeline.current
       .addLabel("slide1")
-      .to(
-        activeBorderRef.current,
-        {
-          y: 20 * 1,
-        },
-        "<"
-      )
+      .to(activeBorderRef.current, {
+        y: 20 * 1,
+      })
       .to(
         slide1ImageRef.current,
         {
           autoAlpha: 1,
           y: 0,
         },
-        0
+        "<"
       )
       .to(
         slide1ContentRef.current,
         {
           autoAlpha: 1,
           y: 0,
-        },
-        0
-      )
-      .to(slide1ImageRef.current, {
-        autoAlpha: 0,
-        y: -20,
-      })
-      .to(
-        slide1ContentRef.current,
-        {
-          autoAlpha: 0,
-          y: -20,
-        },
-        "<"
-      )
-      .addLabel("slide2")
-      .to(
-        activeBorderRef.current,
-        {
-          y: 20 * 1,
         },
         "<"
       )
@@ -192,10 +168,48 @@ export default function Home() {
         },
         "<"
       )
-      .to(slide2ImageRef.current, {
-        autoAlpha: 1,
-        y: 0,
+      .to(
+        slide1ImageRef.current,
+        {
+          autoAlpha: 0,
+          y: -20,
+        },
+        "<"
+      )
+      .to(
+        slide1ContentRef.current,
+        {
+          autoAlpha: 0,
+          y: -20,
+        },
+        "<"
+      )
+      .addLabel("slide2")
+      .to(activeBorderRef.current, {
+        y: 20 * 1,
       })
+      .to(
+        slide1DotRef.current,
+        {
+          background: "#ccc",
+        },
+        "<"
+      )
+      .to(
+        slide2DotRef.current,
+        {
+          background: "blue",
+        },
+        "<"
+      )
+      .to(
+        slide2ImageRef.current,
+        {
+          autoAlpha: 1,
+          y: 0,
+        },
+        "<"
+      )
       .to(
         slide2ContentRef.current,
         {
@@ -354,22 +368,34 @@ export default function Home() {
             <button
               ref={slide1DotRef}
               className="step"
-              onClick={() => timeline.current.play("slide1")}
+              onClick={() => {
+                timeline.current.pause();
+                timeline.current.play("slide1");
+              }}
             />
             <button
               ref={slide2DotRef}
               className="step"
-              onClick={() => timeline.current.play("slide2")}
+              onClick={() => {
+                timeline.current.pause();
+                timeline.current.play("slide2");
+              }}
             />
             <button
               ref={slide3DotRef}
               className="step"
-              onClick={() => timeline.current.play("slide3")}
+              onClick={() => {
+                timeline.current.pause();
+                timeline.current.play("slide3");
+              }}
             />
             <button
               ref={slide4DotRef}
               className="step"
-              onClick={() => timeline.current.play("slide4")}
+              onClick={() => {
+                timeline.current.pause();
+                timeline.current.play("slide4");
+              }}
             />
             <button ref={activeBorderRef} className="active-border" />
           </div>
